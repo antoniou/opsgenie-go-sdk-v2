@@ -1,8 +1,9 @@
 package incident
 
 import (
-	"github.com/opsgenie/opsgenie-go-sdk-v2/client"
 	"time"
+
+	"github.com/opsgenie/opsgenie-go-sdk-v2/client"
 )
 
 type Incident struct {
@@ -65,7 +66,7 @@ type NoteResult struct {
 	Note      string    `json:"note"`
 	Owner     string    `json:"owner"`
 	CreatedAt time.Time `json:"createdAt"`
-	Offset    string    `json:"offset"`
+	Offset    int       `json:"offset"`
 }
 
 type ListNotesResult struct {
