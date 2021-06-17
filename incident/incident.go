@@ -71,6 +71,15 @@ func (c *Client) Close(context context.Context, request *CloseRequest) (*AsyncRe
 	return result, nil
 }
 
+func (c *Client) Resolve(context context.Context, request *ResolveRequest) (*AsyncResult, error) {
+	result := &AsyncResult{}
+	err := c.client.Exec(context, request, result)
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+}
+
 func (c *Client) AddNote(context context.Context, request *AddNoteRequest) (*AsyncResult, error) {
 	result := &AsyncResult{}
 	err := c.client.Exec(context, request, result)
